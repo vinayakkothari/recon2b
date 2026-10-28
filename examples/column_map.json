@@ -1,0 +1,9 @@
+{
+  "gstin": "Vendor GST No",
+  "inv_no": "Bill Ref",
+  "inv_date": "Bill Date",
+  "taxable": "Net Amount",
+  "igst": "IGST Amt",
+  "cgst": "CGST Amt",
+  "sgst": "SGST Amt"
+}

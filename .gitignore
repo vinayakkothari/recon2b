@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# generated data and reports; data/sample is kept on purpose
+data/*
+!data/sample/
+*.parquet
+reconciliation.xlsx
+report.xlsx
+!data/sample/report.xlsx
+decisions.json
+
+# never commit real client files
+clients/
+private/
