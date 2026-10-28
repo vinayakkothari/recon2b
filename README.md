@@ -18,6 +18,23 @@ Every month, someone at a CA firm exports the books from Tally, downloads GSTR-2
 - Writes an Excel report with Indian digit grouping, ready to hand to a client
 - Remembers the accountant's decisions, so next month's run does not ask the same question twice
 
+## Why not just use the GST portal?
+
+GSTR-2B is built from what suppliers file. It shows what they say they billed you, and it knows nothing about your books. The purchase register is what you actually recorded and plan to claim credit on. Reconciling means comparing those two independent records, and the portal only holds one of them. An invoice in your books that a supplier never filed simply doesn't appear in 2B, and nothing on the portal points that out.
+
+The [Invoice Management System](https://cleartax.in/s/ims-vs-pr-gst) lets you accept, reject or park each supplier invoice before it reaches 2B. That makes the comparison more important, because you can only decide what to accept by checking it against your books.
+
+GSTN also offers an [offline matching tool](https://news.cleartax.in/offline-matching-tool-to-compare-itc-in-gstr-2b-with-purchase-register/5251/amp), released in September 2020. It matches on exact fields and is meant for batches of up to about 3,000 documents. recon2b is built for the cases that tool leaves to a person.
+
+| | GSTN offline tool | recon2b |
+| --- | --- | --- |
+| `INV/24-25/0012` in 2B vs `inv 12` in books | unmatched, fixed by hand | matched, with the reason noted |
+| Typos and swapped digits | unmatched | caught when the amounts agree |
+| Size | about 3,000 documents per batch | a million documents in about 20 seconds |
+| Decisions from last month | start again | remembered and applied |
+| GSTIN typo in the books | every invoice from that supplier unmatched | flagged with the likely correct GSTIN |
+| Many clients | one at a time, by hand | scriptable from the command line |
+
 ## Quickstart
 
 ```bash
